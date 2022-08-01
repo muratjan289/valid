@@ -24,13 +24,11 @@ public class Controller {
         XmlMapper mapper = new XmlMapper();
         Root root = mapper.readValue(xmlStreamReader, Root.class);
 
-//        for(SpaceShip spaceShip : spaceStation.getSpaceships()){
-//            spaceShip.setName(spaceShip.getName() + "Now For Sale!!");
-//            spaceShip.getPrice().setValueOfShip(20.0d);
-//        }
-//        Item spaceShip = Item.getSpaceships().get(3);
-//        String xmlString =  mapper.writerWithDefaultPrettyPrinter().writeValueAsString(spaceShip);
-//        log.info("Heres the xml: \n" + xmlString);
+
+
+        Item item = root.getItem().get(0);
+        String xmlString =  mapper.writerWithDefaultPrettyPrinter().writeValueAsString(item);
+        log.info("Heres the xml: \n" + xmlString);
 
 
         return root;
